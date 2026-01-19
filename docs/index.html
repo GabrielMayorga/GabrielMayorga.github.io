@@ -9,6 +9,10 @@
 </head>
 <body>
 
+    <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+    <i class="ph ph-moon" id="theme-icon"></i>
+    </button>
+
     <div class="background-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -65,5 +69,21 @@
 
     </main>
 
+    <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        // Cambiar el icono
+        if (body.classList.contains('light-mode')) {
+            themeIcon.classList.replace('ph-moon', 'ph-sun');
+        } else {
+            themeIcon.classList.replace('ph-sun', 'ph-moon');
+        }
+    });
+    </script>
 </body>
 </html>
